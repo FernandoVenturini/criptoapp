@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/home/home";
 import { Detail } from "./pages/detail/detail";
 import { Notfound } from "./pages/notfound/notfound";
+
+// IMPORTANDO {Layout} de componentes -> layout -> layout.tsx:
 import { Layout } from "./components/layout/layout";
 
 const router = createBrowserRouter([
