@@ -4,4 +4,5 @@
     justify-content: center;
     height: 120px;
     max-width: 1080px;
+    border: 1px solid yellow;
 }

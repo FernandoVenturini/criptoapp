@@ -4,7 +4,7 @@ import styles from './header.module.css';
 
 export function Header() {
     return (
-        <header className='{styles.container}'>
+        <header className={styles.container}>
             <Link to='/'>
                 <img src={logo} alt="Logo Cripto App" />
             </Link>
