@@ -1,13 +1,11 @@
 .container {
     margin: 0 14px;
-    border: 1px solid red;
 }
 
 .form {
     width: 100%;
     display: flex;
     gap: 24px;
-    border: 1px solid blue;
 }
 
 .form input {
@@ -21,4 +19,101 @@
 
 .form button {
     background: transparent;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 14px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 16px;
+    margin: 0.5em 0.75em;
+}
+
+th {
+    color: #fff;
+}
+
+.tr {
+    background-color: #1d1c20;
+}
+
+td:first-child,
+th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+td:last-child,
+th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+table th,
+table td {
+    padding: 14px;
+    text-align: center;
+}
+
+.tdLabel {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.tdProfit {
+    color: #12f98a;
+    font-weight: bold;
+}
+
+.tdLoss {
+    color: #f91257;
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE TABELA */
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table thead {
+        clip: rect(0 0 0 0 );
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        padding: 0;
+    }
+
+    .tr {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 16px;
+    }
+
+    .form button {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .tdLabel {
+        font-size: 16px;
+    }
 }
