@@ -190,3 +190,73 @@ table td {
     font-size: 16px;
   }
 }
+
+table {
+  border: 0;
+}
+
+table thead {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  padding: 0;
+}
+
+table td {
+  border-bottom: 1p solid rgba(221, 221, 221, 0.170);
+  display: block;
+  text-align: right;
+  font-size: 14px;
+}
+
+table td::before {
+  content: attr(data-label);
+  float: left;
+  font-weight: bold;
+  color: #fff;
+}
+
+table td:last-child {
+  border-bottom: 0;
+}
+
+td:first-child,
+th:first-child {
+  border-radius: 0;
+}
+
+td:last-child,
+th:last-child {
+  border-radius: 0;
+}
+
+.tr {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.form {
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 16px;
+}
+
+.form button {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+.tdLabel {
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
