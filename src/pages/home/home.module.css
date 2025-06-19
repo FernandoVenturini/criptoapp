@@ -39,7 +39,7 @@ th {
     color: #fff;
 }
 
-.tr {
+#tbody .tr {
     background-color: #1d1c20;
 }
 
@@ -75,6 +75,17 @@ table td {
     font-weight: bold;
 }
 
+.buttonMore {
+    background: #30beff;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin: 14px 0;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /* RESPONSIVIDADE TABELA */
 @media screen and (max-width: 600px) {
     table {
@@ -97,6 +108,35 @@ table td {
         margin-bottom: 14px;
     }
 
+    table td {
+        border-bottom: 1px solid rgba(221, 221, 221, 0.170);
+        display: block;
+        text-align: right;
+        font-size: 14px;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    table td::lastchild {
+        border-bottom: 0;
+    }
+
+    td:first-child,
+    th:first-child {
+        border-radius: 0;
+    }
+
+    td:last-child,
+    th:last-child {
+        border-radius: 0;
+    }
+
     .form {
         flex-direction: column;
     }
@@ -114,6 +154,9 @@ table td {
     }
 
     .tdLabel {
+        font-size: 16px;
+    }
+    .tdProfit, .tdLoss {
         font-size: 16px;
     }
 }

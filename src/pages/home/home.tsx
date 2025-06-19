@@ -1,12 +1,34 @@
+import { useState, FormEvent } from "react";
 import styles from "./home.module.css";
 import { BsSearch } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Home() {
+
+    const [input, setInput] = useState("");
+    const navigate = useNavigate();
+
+    function handleSubmit(e:FormEvent)  {
+        e.preventDefault();
+
+        if (input === "") return;
+
+        navigate(`/detail/${input}`);
+    };
+
+    function handleGetMore() {
+        alert("Carregar mais moedas");
+    };
+
     return (
         <main className={styles.container}>
-            <form className={styles.form}>
-                <input type="text" placeholder="Digite o nome da moeda..." />
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    placeholder="Digite o nome da moeda..." 
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                />
                 <button type="submit">
                     <BsSearch size={30} color="#fff" />
                 </button>
@@ -22,6 +44,7 @@ export function Home() {
                         <th scope="col">Mudanca 24h</th>
                     </tr>
                 </thead>
+                
                 <tbody id="tbody">
                     <tr className={styles.tr}>
                         <td className={styles.tdLabel} data-label="Moeda">
@@ -41,16 +64,18 @@ export function Home() {
                         <td className={styles.tdLabel} data-label="Volume">
                             2B
                         </td>
-                        <td className={styles.tdLabel} data-label="Valor mercado">
-                            1T
-                        </td>
-                        <td className={styles.tdProfit} data-label="Valor mercado">
+                        <td className={styles.tdProfit} data-label="Mudanca 24h">
                             <span>1.20</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <h1>Pagina Home!</h1>
+
+            <button 
+                className={styles.buttonMore}
+                onClick={handleGetMore}>
+                    Carregar mais
+            </button>
         </main>
     );
 }
