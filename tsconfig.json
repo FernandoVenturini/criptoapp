@@ -1,41 +1,34 @@
 {
   "compilerOptions": {
-    /* Configurações Básicas */
-    "target": "ESNext", // Usa a versão mais recente do ECMAScript
-    "module": "ESNext", // Compatível com módulos ES (necessário para Vite)
-    "lib": ["ESNext", "DOM"], // Tipos para APIs modernas do JavaScript e browser
-    "jsx": "react-jsx", // Sintaxe JSX para React 17+
-
-    /* Estratégia de Resolução */
-    "moduleResolution": "node", // Padrão para projetos modernos
-    "baseUrl": ".", // Permite imports absolutos a partir da raiz
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "baseUrl": ".",
     "paths": {
-      // Mapeamento de aliases (opcional)
       "@/*": ["src/*"]
     },
-
-    /* Verificação de Tipos */
-    "strict": true, // Ativa todas as verificações de tipo
-    "noImplicitAny": true, // Bloqueia 'any' implícito
-    "strictNullChecks": true, // Verificação rigorosa de null/undefined
-    "skipLibCheck": true, // Otimização: ignora verificação de libs
-
-    /* Interoperabilidade */
-    "esModuleInterop": true, // Compatibilidade com CommonJS
-    "allowSyntheticDefaultImports": true, // Permite import default de módulos sem export default
-
-    /* Outras Configurações */
-    "forceConsistentCasingInFileNames": true, // Evita problemas em sistemas case-sensitive
-    "verbatimModuleSyntax": false, // Permite imports mistos (types e valores)
-    "isolatedModules": true, // Garante compatibilidade com transpiladores como Babel
-    "outDir": "./dist", // Pasta de saída para os arquivos compilados
-    "types": ["vite/client"], // Tipos para ambiente Vite
-
-    /* Configurações para React */
-    "allowJs": false, // Apenas arquivos TypeScript
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "outDir": "./dist",
+    "types": ["vite/client"],
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "noEmit": true
   },
-
-  /* Contexto do Projeto */
-  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts",
+    "src/**/*.css.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
 }
