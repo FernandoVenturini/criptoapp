@@ -1,0 +1,44 @@
+/* detail.module.css */
+
+.container {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.coinImage {
+  width: 80px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.marketData {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #900;
+}

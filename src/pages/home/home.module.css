@@ -1,162 +1,192 @@
 .container {
-    margin: 0 14px;
+  margin: 0 14px;
 }
 
 .form {
-    width: 100%;
-    display: flex;
-    gap: 24px;
+  width: 100%;
+  display: flex;
+  gap: 24px;
 }
 
 .form input {
-    width: 100%;
-    height: 44px;
-    border: 0;
-    padding: 0 8px;
-    border-radius: 4px;
-    outline: none;
+  width: 100%;
+  height: 44px;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  color: #000;
 }
 
 .form button {
-    background: transparent;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Tabela */
 table {
-    border-collapse: separate;
-    border-spacing: 0 14px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
 }
 
 table caption {
-    font-size: 16px;
-    margin: 0.5em 0.75em;
+  font-size: 16px;
+  margin: 0.5em 0.75em;
 }
 
 th {
-    color: #fff;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px;
+  text-align: center;
+  background-color: #222;
 }
 
-#tbody .tr {
-    background-color: #1d1c20;
+tbody .tr {
+  background-color: #1d1c20;
 }
 
 td:first-child,
 th:first-child {
-    border-radius: 8px 0 0 8px;
+  border-radius: 8px 0 0 8px;
 }
 
 td:last-child,
 th:last-child {
-    border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 table th,
 table td {
-    padding: 14px;
-    text-align: center;
+  padding: 14px;
+  text-align: center;
+  color: #fff;
+  word-wrap: break-word;
 }
 
 .tdLabel {
-    font-weight: bold;
-    font-size: 18px;
-    color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tdProfit {
-    color: #12f98a;
-    font-weight: bold;
+  color: #12f98a;
+  font-weight: bold;
 }
 
 .tdLoss {
-    color: #f91257;
-    font-weight: bold;
+  color: #f91257;
+  font-weight: bold;
 }
 
 .buttonMore {
-    background: #30beff;
-    padding: 8px 24px;
-    border-radius: 4px;
-    margin: 14px 0;
-    color: #fff;
-    border: 0;
-    font-size: 16px;
-    cursor: pointer;
+  background: #30beff;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin: 14px 0;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonMore:hover {
+  background-color: #269adf;
 }
 
 /* RESPONSIVIDADE TABELA */
 @media screen and (max-width: 600px) {
-    table {
-        border: 0;
-    }
+  table {
+    border: 0;
+  }
 
-    table thead {
-        clip: rect(0 0 0 0 );
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        position: absolute;
-        width: 1px;
-        padding: 0;
-    }
+  table thead {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    padding: 0;
+  }
 
-    .tr {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        margin-bottom: 14px;
-    }
+  tbody .tr {
+    border-bottom: 1px solid #444;
+    display: block;
+    margin-bottom: 14px;
+    background-color: #1d1c20;
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
 
-    table td {
-        border-bottom: 1px solid rgba(221, 221, 221, 0.170);
-        display: block;
-        text-align: right;
-        font-size: 14px;
-    }
+  table td {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.17);
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 14px;
+    padding: 6px 0;
+    color: #fff;
+  }
 
-    table td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #fff;
-    }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+  }
 
-    table td::lastchild {
-        border-bottom: 0;
-    }
+  /* Remover borda inferior do último td em cada "card" */
+  table td:last-child {
+    border-bottom: 0;
+  }
 
-    td:first-child,
-    th:first-child {
-        border-radius: 0;
-    }
+  td:first-child,
+  th:first-child,
+  td:last-child,
+  th:last-child {
+    border-radius: 0;
+  }
 
-    td:last-child,
-    th:last-child {
-        border-radius: 0;
-    }
+  .form {
+    flex-direction: column;
+  }
 
-    .form {
-        flex-direction: column;
-    }
+  .form input {
+    margin-bottom: 16px;
+  }
 
-    .form input {
-        margin-bottom: 16px;
-    }
+  .form button {
+    width: 100%;
+  }
 
-    .form button {
-        width: 100%;
-    }
+  th,
+  td {
+    padding: 8px;
+  }
 
-    th, td {
-        padding: 8px;
-    }
+  .tdLabel {
+    font-size: 16px;
+    white-space: normal;
+  }
 
-    .tdLabel {
-        font-size: 16px;
-    }
-    .tdProfit, .tdLoss {
-        font-size: 16px;
-    }
+  .tdProfit,
+  .tdLoss {
+    font-size: 16px;
+  }
 }
