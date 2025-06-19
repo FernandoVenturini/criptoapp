@@ -1,7 +1,9 @@
-import { useState, useEffect, type FormEvent } from "react";
 import styles from "./home.module.css";
 import { BsSearch } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
+
+import { useState, useEffect } from "react";
+import type { FormEvent } from "react";
 
 // Definindo a interface CoinProps para tipar os dados das moedas
 interface CoinProps {
