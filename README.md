@@ -1,5 +1,4 @@
 📈 CryptoApp - Cryptocurrency App
-https://screenshot.png (Add a screenshot of your app here)
 
 A modern web app to track cryptocurrency quotes in real time, with full details about each coin.
 
