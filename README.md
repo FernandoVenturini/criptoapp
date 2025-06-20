@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+📈 CryptoApp - Cryptocurrency App
+https://screenshot.png (Add a screenshot of your app here)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web app to track cryptocurrency quotes in real time, with full details about each coin.
 
-Currently, two official plugins are available:
+✨ Features
+📊 List of the main cryptocurrencies by market capitalization
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔍 Advanced search by name, symbol or coin ID
 
-## Expanding the ESLint configuration
+💰 Detailed view of each cryptocurrency
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📈 Price variation charts (24h, 7d, 30d)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🔔 (Future) Custom price alerts
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠 Technologies Used
+Frontend
+React (v18+) - Core library for building the UI
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+TypeScript - Adds static typing to JavaScript
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Vite - Ultra-fast build tool
+
+React Router (v6+) - Navigation between pages
+
+Emotion - CSS-in-JS styling
+
+React Icons - High-quality icons
+
+Axios - HTTP client for API calls
+
+Backend
+API
+CoinGecko API - Cryptocurrency data source
+Netlify - Hosting and CI/CD
+
+📡 API consumption
+The application consumes the CoinGecko API to get real-time data:
+
+Endpoints used:
+GET /coins/markets - List of cryptocurrencies with basic data
+
+GET /coins/{id} - Full details of a specific cryptocurrency
+
+GET /coins/{id}/market_chart - Price history
+
+
+LINK: https://painelcurrance.netlify.app/
