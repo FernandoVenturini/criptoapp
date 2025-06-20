@@ -46,3 +46,4 @@ GET /coins/{id}/market_chart - Price history
 
 
 LINK: https://painelcurrance.netlify.app/
+Created by Fernando Venturini (<LVF_Code/>)
