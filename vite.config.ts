@@ -1,22 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { fileURLToPath } from "url"; // Método moderno para substituir __dirname
+import path from "path";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
+  ],
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    sourcemap: true,
-  },
-  server: {
-    port: 3000,
-    open: true,
   },
 });
